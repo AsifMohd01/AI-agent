@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Autonomous AI Agent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6bdf;
+            --danger-color: #dc3545;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .error-icon {
+            font-size: 5rem;
+            color: var(--danger-color);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: var(--danger-color);
+            margin-bottom: 20px;
+        }
+        
+        .error-message {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .code-block {
+            background-color: #f5f5f5;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .steps {
+            text-align: left;
+            margin: 30px 0;
+        }
+        
+        .steps ol {
+            padding-left: 20px;
+        }
+        
+        .steps li {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3a59c7;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-exclamation-triangle error-icon"></i>
+        <h1>{{ error_title }}</h1>
+        <div class="error-message">{{ error_message }}</div>
+        
+        {% if error_type == 'api_key' %}
+            <div class="steps">
+                <h2>How to Fix This Issue:</h2>
+                <ol>
+                    <li>
+                        <strong>Get a Google API Key for Gemini 1.5 Flash</strong>
+                        <p>Visit <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a> to create an API key.</p>
+                    </li>
+                    <li>
+                        <strong>Create a .env file in the project directory</strong>
+                        <p>Create a file named <code>.env</code> in the AI-agent directory with the following content:</p>
+                        <div class="code-block">
+                            GOOGLE_API_KEY=your_api_key_here<br>
+                            SERPAPI_KEY=your_serpapi_key_here  # Optional
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Restart the application</strong>
+                        <p>Stop the current server (press CTRL+C in the terminal) and start it again with <code>python app.py</code>.</p>
+                    </li>
+                </ol>
+            </div>
+        {% elif error_type == 'general' %}
+            <div class="steps">
+                <h2>Possible Solutions:</h2>
+                <ol>
+                    <li>Check your internet connection</li>
+                    <li>Verify that all dependencies are installed correctly</li>
+                    <li>Check the terminal for more detailed error messages</li>
+                    <li>Restart the application</li>
+                </ol>
+            </div>
+        {% endif %}
+        
+        <a href="/" class="btn">Try Again</a>
+        
+        <div class="footer">
+            Autonomous AI Agent &copy; 2023 | Powered by Gemini 1.5 Flash
+        </div>
+    </div>
+</body>
+</html>

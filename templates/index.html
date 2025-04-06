@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous AI Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-robot"></i> Autonomous AI Agent</h1>
+            <p class="subtitle">Execute tasks across browser, terminal, and file system environments</p>
+        </header>
+
+        <main>
+            <section class="instruction-section">
+                <h2>What would you like the AI to do?</h2>
+                <div class="instruction-container">
+                    <textarea id="instruction" placeholder="Enter your instruction here... (e.g., 'Search for the latest AI news, save the top 3 headlines to a file, and create a summary report')"></textarea>
+                    <button id="submit-btn" class="primary-btn">
+                        <i class="fas fa-play"></i> Execute
+                    </button>
+                </div>
+            </section>
+
+            <section class="execution-section">
+                <div class="execution-header">
+                    <h2>Execution Status</h2>
+                    <div class="status-indicator">
+                        <span id="status-badge" class="status-badge idle">Idle</span>
+                    </div>
+                </div>
+                
+                <div class="execution-container">
+                    <div class="environments-container">
+                        <div class="environment-card" id="browser-env">
+                            <div class="env-header">
+                                <i class="fas fa-globe"></i>
+                                <h3>Browser</h3>
+                                <span class="env-status" id="browser-status">Inactive</span>
+                            </div>
+                            <div class="env-content" id="browser-content">
+                                <p class="env-placeholder">No browser tasks executed yet</p>
+                            </div>
+                        </div>
+                        
+                        <div class="environment-card" id="terminal-env">
+                            <div class="env-header">
+                                <i class="fas fa-terminal"></i>
+                                <h3>Terminal</h3>
+                                <span class="env-status" id="terminal-status">Inactive</span>
+                            </div>
+                            <div class="env-content" id="terminal-content">
+                                <p class="env-placeholder">No terminal commands executed yet</p>
+                            </div>
+                        </div>
+                        
+                        <div class="environment-card" id="filesystem-env">
+                            <div class="env-header">
+                                <i class="fas fa-folder"></i>
+                                <h3>File System</h3>
+                                <span class="env-status" id="filesystem-status">Inactive</span>
+                            </div>
+                            <div class="env-content" id="filesystem-content">
+                                <p class="env-placeholder">No file operations executed yet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="report-section" id="report-section">
+                <h2>Execution Report</h2>
+                <div class="report-container">
+                    <div id="report-content">
+                        <p class="report-placeholder">The execution report will appear here after task completion</p>
+                    </div>
+                    <button id="download-report-btn" class="secondary-btn" disabled>
+                        <i class="fas fa-download"></i> Download Report
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Autonomous AI Agent &copy; 2023 | Powered by Gemini 1.5 Flash</p>
+        </footer>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="hidden">
+        <div class="loader"></div>
+        <p id="loading-message">Processing your instruction...</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/general_response.js') }}"></script>
+</body>
+</html>
