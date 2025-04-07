@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# VSCode settings
+.vscode/
+
+# Build folders
+dist/
+build/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+
+# Coverage reports
+coverage/
+*.cover
+*.lcov
+
+# PDF output (if using pdfkit etc.)
+*.pdf
+
+
+.vscode/

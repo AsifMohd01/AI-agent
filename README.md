@@ -173,4 +173,8 @@ The application should be accessible at `http://localhost:5000`.
 
 
 ## Contact
+<<<<<<< HEAD
 For any inquiries or issues, please contact **[asif.mohd@campusuvce.in](mailto:asif.mohd@campusuvce.in)**.
+=======
+For any inquiries or issues, please contact **[asif.mohd@campusuvce.in](mailto:asif.mohd@campusuvce.in)**.
+>>>>>>> fb540d3 (readme)
