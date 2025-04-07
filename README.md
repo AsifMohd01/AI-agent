@@ -1,266 +1,152 @@
 # Autonomous AI Agent
 
-![AI Agent Banner](images/ai-agent-banner.png)
-*[Add a banner image of your application here]*
-
-An intelligent agent capable of executing tasks across browser, terminal, and file system environments, powered by Google's Gemini 1.5 Flash model. This project creates a versatile AI assistant that can understand natural language instructions and perform complex tasks.
-
-## Overview
-
-The Autonomous AI Agent is designed to bridge the gap between human instructions and digital execution. By leveraging Google's powerful Gemini 1.5 Flash model, it can understand complex requests, search for information, analyze data, and generate comprehensive reports - all through a simple, intuitive interface.
-
-![AI Agent Interface](images/ai-agent-interface.png)
-*[Add a screenshot of your main application interface here]*
-
-This project implements an autonomous AI agent that can:
-
-- Search the web and extract information from multiple sources
-- Generate comprehensive reports and documents with professional formatting
-- Create PDF-ready HTML documents that can be easily saved or printed
-- Process natural language instructions and break them down into executable steps
-- Execute tasks across multiple environments (browser, terminal, file system)
-- Provide real-time, up-to-date information on any topic
+## Description
+The **Autonomous AI Agent** is an intelligent system capable of executing tasks across browser, terminal, and file system environments, powered by Google's Gemini 1.5 Flash model. This versatile AI assistant understands natural language instructions and performs complex tasks through a simple, intuitive interface.
 
 ## Features
 
-### Multi-Environment Task Execution
+### **Multi-Environment Task Execution**
+- Seamlessly work across browser, terminal, and file system environments
+- Execute commands and process their outputs
+- Create, read, and manipulate files
 
-The agent can seamlessly work across different digital environments:
+### **Intelligent Document Generation**
+- Create professional reports and documents with smart formatting
+- Generate PDF-ready HTML documents with one-click export
+- Include real-time data from the latest sources
+- Use professional layouts for different document types
 
-- **Browser Environment**: Search the web, extract information, and analyze content from websites
-- **Terminal Environment**: Execute commands and process their outputs
-- **File System Environment**: Create, read, and manipulate files
+### **Advanced Web Search & Analysis**
+- Collect and synthesize information from multiple websites
+- Extract specific information like product specifications and statistics
+- Compare different products, services, or concepts
+- Condense large amounts of information into concise summaries
 
-![Multi-Environment Execution](images/multi-environment.png)
-*[Add a screenshot showing the different environment panels in your UI]*
+### **Natural Language Understanding**
+- Process multi-step requests in natural language
+- Maintain context throughout a conversation
+- Break down complex tasks into manageable steps
+- Tailor responses based on the specific query and context
 
-### Intelligent Document Generation
+### **Error-Resilient Processing**
+- Handle JavaScript DOM manipulation errors gracefully
+- Provide fallback mechanisms for content generation
+- Implement robust error handling throughout the application
 
-Create professional documents and reports with:
+## Screenshots
 
-- **Smart Formatting**: Automatic conversion of content to well-structured HTML
-- **PDF Export**: One-click conversion to PDF through browser print functionality
-- **Dynamic Content**: Real-time data inclusion from the latest sources
-- **Custom Templates**: Professional layouts for different document types
+### **Main Interface**
+![Main Interface](/Screenshots/Interface.png)
 
-![Document Generation Example](images/document-example.png)
-*[Add a screenshot of a generated document/report]*
+### **Multi-Environment Execution**
+![Multi-Environment Execution](/Screenshots/Environment.png)
 
-### Advanced Web Search & Analysis
+### **Document Generation**
+![Document Generation](/Screenshots/Execution-Report.png)
 
-The agent goes beyond simple search to provide:
+### **Web Search Results**
+![Web Search Results](/Screenshots/web-search.png)
 
-- **Multi-Source Information**: Collects and synthesizes data from multiple websites
-- **Content Extraction**: Pulls specific information like product specifications, trends, or statistics
-- **Comparative Analysis**: Can compare different products, services, or concepts
-- **Summarization**: Condenses large amounts of information into concise summaries
+### **Natural Language Processing**
+![Natural Language Processing](/Screenshots/Language.png)
 
-![Web Search Capabilities](images/web-search.png)
-*[Add a screenshot showing search results or extracted information]*
+## Tech Stack
 
-### Natural Language Understanding
+### **Frontend**
+- HTML, CSS, JavaScript
+- Responsive design for desktop and tablet devices
 
-Powered by Google's Gemini 1.5 Flash model, the agent can:
+### **Backend**
+- Python with Flask web framework
+- Google Generative AI API (Gemini 1.5 Flash model)
+- RESTful API architecture
 
-- **Understand Complex Instructions**: Process multi-step requests in natural language
-- **Context Awareness**: Maintain context throughout a conversation
-- **Task Decomposition**: Break down complex tasks into manageable steps
-- **Adaptive Responses**: Tailor responses based on the specific query and context
+### **Document Generation**
+- HTML with print-to-PDF capability
+- Dynamic content formatting
 
-![Natural Language Processing](images/nlp-example.png)
-*[Add a screenshot showing a complex instruction and the agent's response]*
+## Installation
 
-## Getting Started
-
-### Prerequisites
-
+### **Prerequisites**
+Make sure you have the following installed:
 - Python 3.8+
 - Flask web framework
 - Google Generative AI API key for Gemini 1.5 Flash
 - Modern web browser (Chrome or Firefox recommended)
 
-![Prerequisites](images/prerequisites.png)
-*[Add an image showing the required software/versions]*
+### **Steps to Run**
 
-### Obtaining a Google API Key
+#### 1. **Clone the repository**
+```bash
+git clone https://github.com/AsifMohd01/AI-agent.git
+cd AI-agent
+```
 
-To use this application, you'll need a Google API key with access to the Gemini 1.5 Flash model:
+#### 2. **Create a virtual environment (recommended)**
+```bash
+python -m venv venv
 
-1. Visit the [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Create or sign in to your Google account
-3. Create a new API key
-4. Copy the key for use in the next steps
+# On Windows
+venv\Scripts\activate
 
-![Google API Key](images/google-api-key.png)
-*[Add a screenshot of the Google AI Studio API key page with sensitive information blurred]*
+# On macOS/Linux
+source venv/bin/activate
+```
 
-### Installation
+#### 3. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/autonomous-ai-agent.git
-   cd autonomous-ai-agent
-   ```
+#### 4. **Configure Environment Variables**
+Create a `.env` file in the project root with your Google API key:
+```
+GOOGLE_API_KEY=your_api_key_here
+```
 
-2. Create a virtual environment (recommended):
-   ```bash
-   python -m venv venv
+#### 5. **Start the server**
+```bash
+python app.py
+```
 
-   # On Windows
-   venv\Scripts\activate
+The application should be accessible at `http://localhost:5000`.
 
-   # On macOS/Linux
-   source venv/bin/activate
-   ```
+#### 5. **To Start the server directly**
+```bash
+python run.py
+```
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+The application should be accessible at `http://localhost:5000`.
 
-   ![Installation Process](images/installation.png)
-   *[Add a screenshot of the terminal showing successful installation]*
+## Usage
 
-4. Create a `.env` file in the project root with your Google API key:
-   ```
-   GOOGLE_API_KEY=your_api_key_here
-   ```
-
-### Running the Application
-
-1. Start the Flask server:
-   ```bash
-   python AI-agent/app.py
-   ```
-
-2. Open your browser and navigate to:
-   ```
-   http://localhost:5000
-   ```
-
-   ![Application Startup](images/app-startup.png)
-   *[Add a screenshot showing the terminal with the Flask server running]*
-
-## Usage Guide
-
-### Basic Operation
-
+### **Basic Operation**
 1. Enter your instruction in the text area
-   ![Enter Instruction](images/enter-instruction.png)
-   *[Add a screenshot of the instruction input area]*
-
 2. Click "Execute" to process your request
-   ![Execute Button](images/execute-button.png)
-   *[Add a screenshot highlighting the execute button]*
-
 3. View the results in the appropriate environment section
-   ![Results Display](images/results-display.png)
-   *[Add a screenshot showing results in the different environment panels]*
-
 4. Download or print any generated documents
-   ![Document Download](images/document-download.png)
-   *[Add a screenshot showing the document download/print options]*
 
-### Example Instructions
-
-Try these example instructions to see the agent's capabilities:
+### **Example Instructions**
 
 #### Document Generation
 - "Create a report on the latest smartphones"
 - "Generate a comprehensive document about renewable energy trends"
 - "Make a PDF comparing the top 5 electric vehicles of 2024"
 
-![Document Generation Example](images/document-generation.png)
-*[Add a screenshot showing a document being generated]*
-
 #### Web Search & Analysis
 - "Search for the top 5 laptops of 2024 and summarize their features"
 - "Find information about climate change and extract the key statistics"
 - "Compare the nutritional benefits of kale vs spinach"
-
-![Web Search Example](images/web-search-example.png)
-*[Add a screenshot showing search results]*
 
 #### Multi-Step Tasks
 - "Search for the latest AI research papers, summarize the top 3, and create a report"
 - "Find recipes for vegetarian pasta dishes, extract the ingredients, and save them to a file"
 - "Research the history of electric cars, create a timeline, and generate a presentation"
 
-![Multi-Step Task](images/multi-step-task.png)
-*[Add a screenshot showing a multi-step task execution]*
 
-## Project Architecture
+## Troubleshooting
 
-The Autonomous AI Agent follows a modular architecture that separates concerns and allows for easy extension:
-
-![Project Architecture](images/architecture.png)
-*[Add a diagram showing the application architecture]*
-
-### Project Structure
-
-```
-AI-agent/
-├── app.py              # Main application file with Flask routes and AI agent logic
-├── static/             # Static assets
-│   ├── css/            # Stylesheets for the web interface
-│   │   └── style.css   # Main stylesheet
-│   ├── js/             # JavaScript files
-│   │   ├── script.js   # Main application logic
-│   │   └── general_response.js # Document handling logic
-│   └── downloads/      # Generated documents (created at runtime)
-├── templates/          # HTML templates
-│   └── index.html      # Main application interface
-├── .env                # Environment variables (not in repo)
-└── requirements.txt    # Project dependencies
-```
-
-![Project Structure](images/project-structure.png)
-*[Add a screenshot of the project directory structure]*
-
-## Technical Implementation Details
-
-### Backend (Python/Flask)
-
-The backend is built with Flask and handles:
-
-- **API Integration**: Connects to Google's Generative AI API for the Gemini 1.5 Flash model
-- **Task Planning**: Breaks down complex instructions into executable steps
-- **Environment Management**: Coordinates actions across browser, terminal, and file system
-- **Document Generation**: Creates well-formatted HTML documents for reports
-- **Error Handling**: Provides graceful fallbacks for various error conditions
-
-![Backend Architecture](images/backend-architecture.png)
-*[Add a diagram showing the backend components]*
-
-### Frontend (HTML/CSS/JavaScript)
-
-The frontend provides:
-
-- **Intuitive Interface**: Clean, responsive design for easy interaction
-- **Real-time Updates**: Dynamic display of execution progress
-- **Environment Panels**: Dedicated sections for different execution environments
-- **Document Preview**: Inline preview of generated documents
-- **Responsive Design**: Works on desktop and tablet devices
-
-![Frontend Components](images/frontend-components.png)
-*[Add a labeled screenshot of the UI components]*
-
-### AI Model Integration
-
-The application leverages Google's Gemini 1.5 Flash model for:
-
-- **Instruction Understanding**: Parsing and interpreting user requests
-- **Content Generation**: Creating detailed, accurate document content
-- **Web Analysis**: Extracting and synthesizing information from search results
-- **Task Planning**: Determining the optimal sequence of steps for complex tasks
-
-![AI Integration](images/ai-integration.png)
-*[Add a diagram showing how the AI model integrates with the application]*
-
-## Troubleshooting Guide
-
-### API Key Issues
-
+### **API Key Issues**
 **Problem**: The application fails to start or returns errors about the API key.
 
 **Solution**:
@@ -268,11 +154,7 @@ The application leverages Google's Gemini 1.5 Flash model for:
 2. Ensure the API key has access to the Gemini 1.5 Flash model
 3. Check that the key hasn't expired or reached its quota limit
 
-![API Key Troubleshooting](images/api-key-troubleshooting.png)
-*[Add a screenshot showing where to check API key settings]*
-
-### Document Generation Errors
-
+### **Document Generation Errors**
 **Problem**: Documents fail to generate or display incorrectly.
 
 **Solution**:
@@ -280,11 +162,7 @@ The application leverages Google's Gemini 1.5 Flash model for:
 2. Try using the "Create a report on..." format for more reliable document generation
 3. For complex documents, break down the request into simpler components
 
-![Document Troubleshooting](images/document-troubleshooting.png)
-*[Add a screenshot showing a successful document generation]*
-
-### Browser Compatibility
-
+### **Browser Compatibility**
 **Problem**: Some features don't work correctly in certain browsers.
 
 **Solution**:
@@ -292,29 +170,7 @@ The application leverages Google's Gemini 1.5 Flash model for:
 2. Ensure JavaScript is enabled in your browser
 3. Clear your browser cache if you encounter persistent issues
 
-![Browser Compatibility](images/browser-compatibility.png)
-*[Add a screenshot showing the application in different browsers]*
-
-## Future Enhancements
-
-The Autonomous AI Agent is under active development. Planned enhancements include:
-
-- **Voice Input**: Support for voice commands and dictation
-- **Mobile Interface**: Dedicated mobile application for on-the-go use
-- **Expanded Environments**: Additional execution environments like cloud services
-- **Persistent Memory**: Improved context retention between sessions
-- **Custom Templates**: User-defined templates for document generation
-
-![Future Roadmap](images/future-roadmap.png)
-*[Add an image showing the planned feature roadmap]*
 
 
-
-## Acknowledgments
-
-- Google Generative AI for the Gemini 1.5 Flash model
-- Flask team for the web framework
-- All contributors to this project
-
----
-
+## Contact
+For any inquiries or issues, please contact **[asif.mohd@campusuvce.in](mailto:asif.mohd@campusuvce.in)**.
