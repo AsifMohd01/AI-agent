@@ -85,6 +85,12 @@ function displayGeneralResponseResult(result) {
         `;
     }
     
-    // Add to the result container
-    resultContainer.appendChild(resultElement);
+    // Add to the result container if it exists
+    if (resultContainer) {
+        resultContainer.appendChild(resultElement);
+    } else {
+        // If we somehow got here without a container, add to body as last resort
+        document.body.appendChild(resultElement);
+        console.warn("Added result directly to body as fallback");
+    }
 }

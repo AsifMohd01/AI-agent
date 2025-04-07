@@ -90,11 +90,17 @@ document.addEventListener('DOMContentLoaded', function() {
         terminalStatus.className = 'env-status';
         filesystemStatus.textContent = 'Inactive';
         filesystemStatus.className = 'env-status';
-        
+
         browserContent.innerHTML = '<p class="env-placeholder">No browser tasks executed yet</p>';
         terminalContent.innerHTML = '<p class="env-placeholder">No terminal commands executed yet</p>';
         filesystemContent.innerHTML = '<p class="env-placeholder">No file operations executed yet</p>';
-        
+
+        // Clear the result container
+        const resultContainer = document.getElementById('result-container');
+        if (resultContainer) {
+            resultContainer.innerHTML = '';
+        }
+
         reportContent.innerHTML = '<p class="report-placeholder">The execution report will appear here after task completion</p>';
         downloadReportBtn.disabled = true;
     }
@@ -503,9 +509,18 @@ document.addEventListener('DOMContentLoaded', function() {
         errorElement.style.border = '1px solid var(--danger-color)';
         errorElement.style.borderRadius = 'var(--border-radius)';
         errorElement.textContent = message;
-        
+
+        // Display in the result container if it exists
+        const resultContainer = document.getElementById('result-container');
+        if (resultContainer) {
+            // Clear any previous content
+            resultContainer.innerHTML = '';
+            resultContainer.appendChild(errorElement);
+        }
+
+        // Also display in the report content area
         reportContent.innerHTML = '';
-        reportContent.appendChild(errorElement);
+        reportContent.appendChild(errorElement.cloneNode(true));
     }
     
     // Display the execution report
